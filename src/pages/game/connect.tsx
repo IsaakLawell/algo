@@ -6,7 +6,7 @@ function Game() {
       <div>
         <h1>Puissance 4</h1>
         <Link href="/" className="buttonLink2">
-          Retour à la page d'accueil
+          Retour à la page d&aposaccueil
         </Link>
       </div>
     </div>
