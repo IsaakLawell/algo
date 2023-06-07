@@ -75,7 +75,7 @@ function Sudoku() {
           </tbody>
         </table>
         <Link href="/" className="buttonLink2">
-          Retour à la page d`&apos`accueil
+          Retour à la page d'accueil
         </Link>
       </div>
     </div>
