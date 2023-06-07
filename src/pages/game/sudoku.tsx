@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
+import Head from "next/head";
 
 function Sudoku() {
   const [cells, setCells] = useState([
@@ -26,59 +27,64 @@ function Sudoku() {
   }
 
   return (
-    <div className="container">
-      <div>
-        <h1>Sudoku</h1>
-        <table className="mx-auto">
-          <tbody>
-            {cells.map((row, rowIndex) => {
-              return (
-                <tr key={rowIndex}>
-                  {row.map((cell, columnIndex) => {
-                    return columnIndex % 3 === 2 ? (
-                      <>
-                        <td key={columnIndex}>
-                          <input
-                            className="h-9 w-8 text-center"
-                            type="text"
-                            name=""
-                            id=""
-                            onChange={create}
-                            data-row={rowIndex}
-                            data-column={columnIndex}
-                          />
-                        </td>
-                        <div className="h-9 w-1 bg-gray-300"></div>
-                      </>
-                    ) : (
-                      <>
-                        {columnIndex === 0 && (
+    <>
+      <Head>
+        <meta charSet="utf-8" />
+      </Head>
+      <div className="container">
+        <div>
+          <h1>Sudoku</h1>
+          <table className="mx-auto">
+            <tbody>
+              {cells.map((row, rowIndex) => {
+                return (
+                  <tr key={rowIndex}>
+                    {row.map((cell, columnIndex) => {
+                      return columnIndex % 3 === 2 ? (
+                        <>
+                          <td key={columnIndex}>
+                            <input
+                              className="h-9 w-8 text-center"
+                              type="text"
+                              name=""
+                              id=""
+                              onChange={create}
+                              data-row={rowIndex}
+                              data-column={columnIndex}
+                            />
+                          </td>
                           <div className="h-9 w-1 bg-gray-300"></div>
-                        )}
-                        <td key={columnIndex}>
-                          <input
-                            className="h-9 w-8 text-center"
-                            type="text"
-                            name=""
-                            id=""
-                            onChange={create}
-                            data-row={rowIndex}
-                            data-column={columnIndex}
-                          />
-                        </td>
-                      </>
-                    );
-                  })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <Link href="/" className="buttonLink2">
-          Retour à la page d'accueil
-        </Link>
+                        </>
+                      ) : (
+                        <>
+                          {columnIndex === 0 && (
+                            <div className="h-9 w-1 bg-gray-300"></div>
+                          )}
+                          <td key={columnIndex}>
+                            <input
+                              className="h-9 w-8 text-center"
+                              type="text"
+                              name=""
+                              id=""
+                              onChange={create}
+                              data-row={rowIndex}
+                              data-column={columnIndex}
+                            />
+                          </td>
+                        </>
+                      );
+                    })}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          <Link href="/" className="buttonLink2">
+            Retour à la page d'accueil
+          </Link>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 export default Sudoku;
