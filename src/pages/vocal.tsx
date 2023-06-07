@@ -6,7 +6,7 @@ function Vocal() {
       <div>
         <h1>Commande vocale</h1>
         <Link href="/" className="buttonLink2">
-          Retour à la page d&aposaccueil
+          Retour à la page d'accueil
         </Link>
       </div>
     </div>
